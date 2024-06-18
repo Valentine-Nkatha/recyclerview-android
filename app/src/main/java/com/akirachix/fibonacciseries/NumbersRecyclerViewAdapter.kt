@@ -7,11 +7,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class NumbersRecyclerViewAdapter (var numbers:List<Int>):RecyclerView.Adapter<NumbersViewHolder>(){
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumbersViewHolder {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumbersViewHolder {
-        val numberView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fibonacci_series_one)
+        val numberView=LayoutInflater.from(parent.context).inflate(R.layout.fibonacci_series_one,parent,false)
         return NumbersViewHolder(numberView)
+
     }
+        
 
     override fun onBindViewHolder(holder: NumbersViewHolder, position: Int) {
         holder.tvNumber.text = numbers[position].toString()
